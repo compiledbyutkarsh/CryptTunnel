@@ -8,7 +8,10 @@ from utils import CryptoEngine
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 
 # KEY (Hardcoded but shared across files)
-KEY = b'P4k2nxuWp0pbRINIz_Z5i3xgXRYCfJEMCXaaNusYjgo=' 
+import os
+from dotenv import load_dotenv
+load_dotenv()
+KEY = os.getenv('KEY').encode()
 crypto = CryptoEngine(KEY)
 
 def start_client(target_host, target_port):

@@ -8,3 +8,4 @@ __pycache__/
 .DS_Store
 keygen.py
 __pycache__/
+.env

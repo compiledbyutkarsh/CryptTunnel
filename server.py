@@ -12,7 +12,10 @@ logging.basicConfig(
 
 # KEY: In production, load this from an environment variable or secure .key file
 # Use: fernet_key = Fernet.generate_key() to generate a valid key
-KEY = b'P4k2nxuWp0pbRINIz_Z5i3xgXRYCfJEMCXaaNusYjgo=' 
+import os
+from dotenv import load_dotenv
+load_dotenv()
+KEY = os.getenv('KEY').encode() 
 crypto = CryptoEngine(KEY)
 
 def handle_client(client_socket, addr):
