@@ -5,3 +5,6 @@ __pycache__/
 # Security
 *.key
 .env
+.DS_Store
+keygen.py
+__pycache__/
