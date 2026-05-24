@@ -7,15 +7,22 @@ CryptTunnel is a professional-grade, multi-threaded VPN-tunneling framework buil
 - **Multi-threaded Architecture:** Efficiently handles multiple concurrent clients.
 - **Robust Logging:** Built-in observability for real-time traffic monitoring.
 - **Interactive Tunneling:** Dynamic client-side input streaming.
+- **Secure Secret Management:** Uses `.env` files for environment variables.
 
 ## How to Get Started
 
 ### 1. Prerequisites
 ```bash
-pip install cryptography
+pip install -r requirements.txt
 ```
 
-### 2. Running the Tunnel
+### 2. Setup
+Create a `.env` file in the root directory:
+```bash
+KEY=your_generated_key_here
+```
+
+### 3. Running the Tunnel
 **Start the Server:**
 ```bash
 python3 server.py
