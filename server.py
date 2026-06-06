@@ -10,8 +10,7 @@ logging.basicConfig(
     handlers=[logging.StreamHandler()]
 )
 
-# KEY: In production, load this from an environment variable or secure .key file
-# Use: fernet_key = Fernet.generate_key() to generate a valid key
+
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -50,7 +49,6 @@ def start_server(host='0.0.0.0', port=8888):
     try:
         while True:
             client, addr = server.accept()
-            # Spawn a new thread for each client to ensure non-blocking relay
             client_thread = threading.Thread(target=handle_client, args=(client, addr))
             client_thread.daemon = True
             client_thread.start()
